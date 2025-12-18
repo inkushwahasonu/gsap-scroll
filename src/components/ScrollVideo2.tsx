@@ -8,7 +8,7 @@ const frameCount = 120;
 const getFrame = (i: number) =>
   `/frames/frame_${String(i).padStart(4, "0")}.jpg`;
 
-export default function HeroSection() {
+export default function ScrollVideo4() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const animRef = useRef({ frame: 0 });
@@ -63,7 +63,6 @@ export default function HeroSection() {
 
   return (
     <div aria-hidden="true" className="jjnta24 hrrf8q0" role="img">
-
       <video
         muted
         preload="none"
@@ -90,7 +89,6 @@ export default function HeroSection() {
           src="/fallback-desktop.jpg"
         />
       </picture>
-
     </div>
   );
 }
