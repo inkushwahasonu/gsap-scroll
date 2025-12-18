@@ -86,22 +86,19 @@
 // }
 // =============================================================================
 
-
-
-
 import React, { useEffect, useRef } from "react";
 
-const HeroVideoCanvas: React.FC = () => {
+const ScrollVideo: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
-    if (!video || !canvas) return;           // avoid null
+    if (!video || !canvas) return; // avoid null
 
-    const ctx = canvas.getContext("2d");     // ctx is CanvasRenderingContext2D | null
-    if (!ctx) return;                        // extra safety
+    const ctx = canvas.getContext("2d"); // ctx is CanvasRenderingContext2D | null
+    if (!ctx) return; // extra safety
 
     const resizeCanvas = () => {
       canvas.width = canvas.clientWidth;
@@ -130,25 +127,35 @@ const HeroVideoCanvas: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden" }}>
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100vh",
+        overflow: "hidden",
+      }}
+    >
       <picture>
         <source
-        //   srcSet="desktop-large.jpg 1920w, desktop-medium.jpg 1280w, desktop-small.jpg 768w"
-        srcSet="https://plus.unsplash.com/premium_photo-1765305862962-f2074bcec56a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
-
+          //   srcSet="desktop-large.jpg 1920w, desktop-medium.jpg 1280w, desktop-small.jpg 768w"
+          srcSet="https://plus.unsplash.com/premium_photo-1765305862962-f2074bcec56a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
           media="(min-width: 768px)"
         />
         <source
-        //   srcSet="mobile-large.jpg 1024w, mobile-medium.jpg 640w, mobile-small.jpg 420w"
-        srcSet="https://plus.unsplash.com/premium_photo-1765305862962-f2074bcec56a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
+          //   srcSet="mobile-large.jpg 1024w, mobile-medium.jpg 640w, mobile-small.jpg 420w"
+          srcSet="https://plus.unsplash.com/premium_photo-1765305862962-f2074bcec56a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
           media="(max-width: 767px)"
         />
         <img
-        //   src="desktop-medium.jpg"
-        srcSet="https://plus.unsplash.com/premium_photo-1765305862962-f2074bcec56a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
-
+          //   src="desktop-medium.jpg"
+          srcSet="https://plus.unsplash.com/premium_photo-1765305862962-f2074bcec56a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
           alt="Background"
-          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
         />
       </picture>
 
@@ -158,17 +165,32 @@ const HeroVideoCanvas: React.FC = () => {
         muted
         loop
         playsInline
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
       >
-        <source src="https://storage.googleapis.com/portfolio-cdn.teckat.com/medium_2x.webm" type="video/mp4" />
+        <source
+          src="https://storage.googleapis.com/portfolio-cdn.teckat.com/medium_2x.webm"
+          type="video/mp4"
+        />
       </video>
 
       <canvas
         ref={canvasRef}
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }}
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          display: "block",
+        }}
       />
     </div>
   );
 };
 
-export default HeroVideoCanvas;
+export default ScrollVideo;
