@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 // import ScrollVideo from "./components/ScrollVideo";
-// import ScrollVideo3 from "./components/ScrollVideo3";
-import ScrollVideo4 from "./components/ScrollVideo4";
+import ScrollVideo3 from "./components/ScrollVideo3";
+// import ScrollVideo4 from "./components/ScrollVideo4";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -161,10 +161,10 @@ export default function App() {
       </div>
       <div>
         {/* <ScrollVideo/> */}
-        {/* <ScrollVideo3/> */}
-        <div>
+        <ScrollVideo3 />
+        {/* <div>
           <ScrollVideo4 />
-        </div>
+        </div> */}
       </div>
     </div>
   );
