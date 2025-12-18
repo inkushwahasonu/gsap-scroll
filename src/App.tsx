@@ -3,7 +3,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 // import ScrollVideo3 from "./components/ScrollVideo3";
 // import ScrollVideo4 from "./components/ScrollVideo4";
-import ScrollVideo from "./components/ScrollVideo";
+// import ScrollVideo from "./components/ScrollVideo";
+import ScrollVideo2 from "./components/ScrollVideo2";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -160,7 +161,7 @@ export default function App() {
         eum adipisci quas cum architecto qui!
       </div>
       <div>
-        <ScrollVideo />
+        <ScrollVideo2 />
         {/* <ScrollVideo3/> */}
         {/* <div>
           <ScrollVideo4 />
